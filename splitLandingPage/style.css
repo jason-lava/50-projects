@@ -6,6 +6,9 @@
     --right-bg-color: rgba(43, 43, 43, 0.8);
     --left-btn-hover-color: rgba(87, 84, 236, 1);
     --right-btn-hover-color: rgba(28, 122, 28, 1);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1s;
 }
 * {
     box-sizing: border-box;
@@ -42,7 +45,7 @@ h1 {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    width: 15leftrem;
+    width: 15rem;
     padding: 1.5rem;
 }
 
@@ -72,7 +75,7 @@ h1 {
 
 .split.left {
     left: 0;
-    background: url('https://i5.walmartimages.com/asr/fd596ed4-bf03-4ecb-a3b0-7a9c0067df83.bb8f535c7677cebdd4010741c6476d3a.png');
+    background: url('https://images.unsplash.com/photo-1610792516519-a4dd9cbe0dee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -87,7 +90,7 @@ h1 {
 
 .split.right {
     right: 0;
-    background: url('https://i.pcmag.com/imagery/reviews/02IVfjGisnI2rBYfxu9hDve-12.fit_scale.size_1028x578.v1605193197.png');
+    background: url('https://images.unsplash.com/photo-1603920810535-54f3a9b1dd8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1026&q=80');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -100,3 +103,37 @@ h1 {
     background-color: var(--right-bg-color) ;
 }
 
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+    transition: all var(--speed) ease-in-out;
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left {
+    width: var(--other-width);
+}
+
+@media(max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 12rem;
+    }
+}
